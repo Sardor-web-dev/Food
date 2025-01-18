@@ -30,6 +30,11 @@ showSlide(0);
 
   const updateSlides = () => {
     offerSlides.forEach((slide, index) => {
+        // if (index === currentValue) {
+  //   slide.style.display = 'block';
+  // } else {
+  //   slide.style.display = 'none';
+  // }
       slide.style.display = index === currentValue ? 'block' : 'none'
     })
     Current.innerText = (currentValue + 1).toString().padStart(2, '0')
@@ -48,3 +53,6 @@ showSlide(0);
 
   updateSlides();
 
+
+
+  

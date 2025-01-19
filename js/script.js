@@ -54,25 +54,28 @@ showSlide(0);
   
 
 
-const targetDate = new Date("2025-05-20T23:59:59"); 
+const targetDate = new Date('2025-05-20T00:00:00');
 
-function updateTimer() {
-  const now = new Date(); 
-  const timeLeft = targetDate - now; 
+function updateTimer () {
+  const now = new Date();
+  const timeLeft = targetDate - now;
 
-  
   const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
   const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
   const seconds = Math.floor((timeLeft / 1000) % 60);
+  const milliseconds = Math.floor(timeLeft % 1000 )
 
-  document.getElementById("days").innerText = days;
-  document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
-  document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
-  document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+
+  document.getElementById("days").innerText = days
+  document.getElementById("hours").innerText = hours.toString().padStart(2, "0")
+  document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0")
+  document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0")
+  document.getElementById("milliseconds").innerText = milliseconds.toString().padStart(3, "0")
 }
 
+setInterval(updateTimer, 10)
+updateTimer()
 
-setInterval(updateTimer, 1000); 
-updateTimer(); 
+
 

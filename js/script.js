@@ -30,7 +30,7 @@ showSlide(0);
 
   const updateSlides = () => {
     offerSlides.forEach((slide, index) => {
-        // if (index === currentValue) {
+  //       if (index === currentValue) {
   //   slide.style.display = 'block';
   // } else {
   //   slide.style.display = 'none';

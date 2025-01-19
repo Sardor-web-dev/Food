@@ -56,6 +56,7 @@ showSlide(0);
 
 const targetDate = new Date('2025-05-20T00:00:00');
 
+
 function updateTimer () {
   const now = new Date();
   const timeLeft = targetDate - now;
@@ -72,9 +73,10 @@ function updateTimer () {
   document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0")
   document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0")
   document.getElementById("milliseconds").innerText = milliseconds.toString().padStart(3, "0")
-}
+};
 
-setInterval(updateTimer, 10)
+
+setInterval(updateTimer, 100)
 updateTimer()
 
 

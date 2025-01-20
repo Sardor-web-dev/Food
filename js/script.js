@@ -79,5 +79,11 @@ function updateTimer () {
 setInterval(updateTimer, 100)
 updateTimer()
 
+const items = document.querySelectorAll('.calculating__choose-item')
 
-
+items.forEach((item) => {
+  item.onclick = () => {
+    items.forEach((i) => i.classList.remove("calculating__choose-item_active"))
+    item.classList.add("calculating__choose-item_active");
+  }
+});

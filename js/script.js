@@ -54,30 +54,35 @@ showSlide(0);
   
 
 
-const targetDate = new Date('2025-05-20T00:00:00');
+  const targetDate = new Date('2025-05-20T00:00:00');
 
+  function updateTimer() {
+    const now = new Date();
+    let timeLeft = targetDate - now;
+  
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      timeLeft = 0;
+    }
+  
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+    const seconds = Math.floor((timeLeft / 1000) % 60);
+    const milliseconds = Math.floor(timeLeft % 1000);
+  
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+    document.getElementById("milliseconds").innerText = milliseconds.toString().padStart(3, "0");
+  }
+  
 
-function updateTimer () {
-  const now = new Date();
-  const timeLeft = targetDate - now;
+  const timerInterval = setInterval(updateTimer, 100);
+  
+  updateTimer();
 
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
-  const seconds = Math.floor((timeLeft / 1000) % 60);
-  const milliseconds = Math.floor(timeLeft % 1000 )
-
-
-  document.getElementById("days").innerText = days
-  document.getElementById("hours").innerText = hours.toString().padStart(2, "0")
-  document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0")
-  document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0")
-  document.getElementById("milliseconds").innerText = milliseconds.toString().padStart(3, "0")
-};
-
-
-setInterval(updateTimer, 100)
-updateTimer()
 
 const items = document.querySelectorAll('.calculating__choose-item')
 
@@ -88,3 +93,4 @@ items.forEach((item) => {
     item.classList.add("calculating__choose-item_active");
   }
 });
+    

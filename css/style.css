@@ -593,6 +593,7 @@ a {
 }
 
 .promotion__timer .timer {
+    gap: 15px;
     margin-top: 60px;
     padding-left: 95px;
     display: flex;

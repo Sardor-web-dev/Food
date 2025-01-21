@@ -69,7 +69,6 @@ showSlide(0);
     const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
     const seconds = Math.floor((timeLeft / 1000) % 60);
-    const milliseconds = Math.floor(timeLeft % 1000);
   
     document.getElementById("days").innerText = days;
     document.getElementById("hours").innerText = hours.toString().padStart(2, "0");

@@ -75,7 +75,6 @@ showSlide(0);
     document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
     document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
     document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
-    document.getElementById("milliseconds").innerText = milliseconds.toString().padStart(3, "0");
   }
   
 
